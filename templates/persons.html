@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Title</title>
+</head>
+
+<body style="background-color:whitesmoke">
+<h1 style="background-color:darkcyan;text-align:center;margin:auto;color:#8df8bb;font-family: sans-serif;padding:20px">{{person.first_name}}</h1>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Phone</th>
+            <th>Exist</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for p in person %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{p.first_name}}</td>
+            <td>{{p.last_name}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.company}}</td>
+            <td>{{p.phone}}</td>
+            <td>{{p.exist}}</td>
+
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+</body>
+</html>
